@@ -1,20 +1,16 @@
-version: "3"
-
 services:
   backend:
-    build:
-      context: ./backend
+    build: ./backend
+    container_name: url-combinatorics-backend
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
-    restart: always
+    restart: unless-stopped
 
   frontend:
-    build:
-      context: ./frontend
+    build: ./frontend
+    container_name: url-combinatorics-frontend
     ports:
-      - "3000:3000"
-    environment:
-      - VITE_API_URL=http://localhost:8000
-    restart: always
+      - "3000:80"
+    restart: unless-stopped
