@@ -1,16 +1,11 @@
-import React from 'react';
-import { Container, Typography } from '@mui/material';
-import ImageUploader from './components/ImageUploader';
+import React from "react";
+import UploadAndValidate from "./components/UploadAndValidate";
 
-function App() {
+export default function App() {
   return (
-    <Container maxWidth="sm" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        URL Combinatorics
-      </Typography>
-      <ImageUploader />
-    </Container>
+    <div style={{ padding: 20 }}>
+      <h1>URL Combinatorics</h1>
+      <UploadAndValidate />
+    </div>
   );
 }
-
-export default App;
